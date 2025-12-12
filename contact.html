@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Clothing Designer</title>
+    <title>اتصل بنا</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>مرحبًا بك في AI Clothing Designer</h1>
-        <p>صمم ملابسك الذكية بسهولة!</p>
+        <h1>اتصل بنا</h1>
         <nav>
             <a href="index.html">الرئيسية</a> |
             <a href="gallery.html">المعرض</a> |
@@ -18,16 +17,19 @@
     </header>
 
     <main>
-        <section class="intro">
-            <h2>ابدأ تصميم ملابسك الآن!</h2>
-            <button onclick="startDesign()">ابدأ</button>
+        <section class="contact-form">
+            <h2>أرسل لنا رسالة</h2>
+            <form onsubmit="alert('تم إرسال رسالتك!'); return false;">
+                <input type="text" placeholder="الاسم" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <textarea placeholder="رسالتك" required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>حقوق الطبع والنشر © 2025 AI Clothing Designer</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
