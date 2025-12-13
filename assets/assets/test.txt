@@ -1,1 +1,21 @@
 
+<div class="product">
+  <img src="assets/shirt1.jpg" alt="قميص أبيض">
+  <h3>قميص أبيض</h3>
+  <p>2500 دج</p>
+  <button onclick="addToCart('قميص أبيض', 2500)">أضف للسلة</button>
+</div>
+
+<div class="product">
+  <img src="assets/shirt2.jpg" alt="قميص أسود">
+  <h3>قميص أسود</h3>
+  <p>2700 دج</p>
+  <button onclick="addToCart('قميص أسود', 2700)">أضف للسلة</button>
+</div>
+
+<div class="product">
+  <img src="assets/shirt3.jpg" alt="قميص رياضي">
+  <h3>قميص رياضي</h3>
+  <p>3000 دج</p>
+  <button onclick="addToCart('قميص رياضي', 3000)">أضف للسلة</button>
+</div>
