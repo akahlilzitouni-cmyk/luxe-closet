@@ -2,6 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>إتمام الطلب</title>
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
@@ -11,21 +12,31 @@
 <h2>إتمام الطلب</h2>
 
 <form id="orderForm">
-<input placeholder="الاسم" required>
+
+<input placeholder="الاسم الكامل" required>
 <input placeholder="رقم الهاتف" required>
 <input placeholder="العنوان" required>
 
-<select id="state" required>
+<select id="state" class="big" required>
 <option value="">اختر الولاية</option>
-<option value="400">الجزائر</option>
-<option value="500">وهران</option>
-<option value="500">قسنطينة</option>
+<option>01 أدرار</option>
+<option>06 بجاية</option>
+<option>15 تيزي وزو</option>
+<option>16 الجزائر</option>
+<option>19 سطيف</option>
+<option>23 عنابة</option>
+<option>25 قسنطينة</option>
+<option>31 وهران</option>
+<option>48 غليزان</option>
+<option>58 المنيعة</option>
 </select>
 
 <textarea id="orderDetails" readonly></textarea>
 
-<button type="submit">إرسال الطلب عبر واتساب</button>
-</form>
+<button type="submit" class="big">
+📲 إرسال الطلب عبر واتساب
+</button>
 
+</form>
 </body>
 </html>
