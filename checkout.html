@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اختر ولايتك</title>
+  <title>نموذج الطلب</title>
   <style>
     /* تصميم عام */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #00c6ff, #0072ff);
+      background: #0d0d0d;
       color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
       flex-direction: column;
       text-align: center;
@@ -22,63 +22,91 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      color: #b2b200; /* أخضر زيتوني */
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
     }
 
     form {
-      background: rgba(255, 255, 255, 0.1);
+      background: #1a1a1a;
       padding: 30px 40px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    select {
-      padding: 12px;
-      font-size: 1rem;
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
       width: 100%;
-      max-width: 300px;
-      text-align: center;
+      max-width: 400px;
     }
 
-    /* تصميم الأزرار المضيئة */
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 2px solid #556b2f; /* أخضر زيتوني */
+      background: #0d0d0d;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #b2b200;
+      box-shadow: 0 0 10px #b2b200;
+    }
+
+    label {
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* أزرار مضيئة */
     .btn {
       padding: 12px 25px;
       font-size: 1.1rem;
-      margin: 10px;
+      margin: 10px 0;
       border: none;
       border-radius: 10px;
       cursor: pointer;
       color: #fff;
-      background: linear-gradient(45deg, #ff416c, #ff4b2b);
-      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+      background: linear-gradient(45deg, #556b2f, #b2b200); /* أخضر زيتوني */
+      box-shadow: 0 5px 15px rgba(178, 178, 0, 0.5);
       transition: all 0.3s ease;
+      width: 100%;
     }
 
     .btn:hover {
-      box-shadow: 0 0 20px #ff4b2b, 0 0 30px #ff416c;
+      box-shadow: 0 0 20px #b2b200, 0 0 30px #556b2f;
       transform: translateY(-3px);
     }
 
     /* زر تفريغ السلة */
     .btn-clear {
-      background: linear-gradient(45deg, #ff4d4d, #e60000);
-      box-shadow: 0 5px 15px rgba(230, 0, 0, 0.5);
+      background: linear-gradient(45deg, #8b0000, #ff4d4d);
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
     }
 
     .btn-clear:hover {
-      box-shadow: 0 0 20px #e60000, 0 0 30px #ff4d4d;
+      box-shadow: 0 0 20px #ff4d4d, 0 0 30px #8b0000;
       transform: translateY(-3px);
     }
   </style>
 </head>
 <body>
 
-<h1>اختر ولايتك</h1>
+<h1>نموذج الطلب</h1>
 
 <form id="checkoutForm">
+  <label for="fname">الاسم</label>
+  <input type="text" id="fname" placeholder="ادخل الاسم" required>
+
+  <label for="lname">اللقب</label>
+  <input type="text" id="lname" placeholder="ادخل اللقب" required>
+
+  <label for="phone">رقم الهاتف</label>
+  <input type="tel" id="phone" placeholder="ادخل رقم الهاتف" required>
+
+  <label for="state">اختر الولاية</label>
   <select id="state" required>
     <option value="">اختر الولاية</option>
     <option>01 أدرار</option>
@@ -141,7 +169,15 @@
     <option>58 المنيعة</option>
   </select>
 
-  <br>
+  <label for="size">المقاس</label>
+  <select id="size" required>
+    <option value="">اختر المقاس</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+    <option>XXL</option>
+  </select>
 
   <!-- زر إرسال الطلب -->
   <button type="submit" class="btn">تأكيد الطلب</button>
