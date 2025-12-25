@@ -374,7 +374,18 @@
       <option>57 المغير</option>
       <option>58 المنيعة</option>
     </select>
-
+<label for="product"><i class="fa-solid fa-shirt"></i> اختر المنتج</label>
+<select id="product" required>
+  <option value="">اختر المنتج</option>
+  <option 
+    value="تيشيرت أحمر|https://akahlilzitouni-cmyk.github.io/AI-Clothing-Designer/assets/shirt.jpg">
+    تيشيرت أحمر
+  </option>
+  <option 
+    value="هودي أسود|https://images.unsplash.com/photo-1616628181374-f5b0f3aeb017">
+    هودي أسود
+  </option>
+  </select>
     <label for="size"><i class="fa-solid fa-shirt"></i> المقاس</label>
     <select id="size" required>
       <option value="">اختر المقاس</option>
@@ -394,28 +405,39 @@
   جميع الحقوق محفوظة &copy; 2025 - Luxe.Closet
 </footer>
 
-<script>
+<<script>
 function sendWhatsApp() {
-  const fname=document.getElementById('fname').value;
-  const lname=document.getElementById('lname').value;
-  const phone=document.getElementById('phone').value;
-  const state=document.getElementById('state').value;
-  const size=document.getElementById('size').value;
+  const fname = fnameEl = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const state = document.getElementById('state').value;
+  const size = document.getElementById('size').value;
+  const productData = document.getElementById('product').value;
 
-  if(!fname||!lname||!phone||!state||!size){
-    alert('الرجاء تعبئة جميع الحقول'); return;
+  if (!fname || !lname || !phone || !state || !size || !productData) {
+    alert("الرجاء تعبئة جميع الحقول");
+    return;
   }
 
-  const message=`طلب جديد:%0Aالاسم: ${fname}%0Aاللقب: ${lname}%0Aرقم الهاتف: ${phone}%0Aالولاية: ${state}%0Aالمقاس: ${size}`;
-  const whatsappNumber="213668086810"; // ضع رقمك هنا
-  const url=`https://wa.me/${whatsappNumber}?text=${message}`;
-  window.open(url,"_blank");
-}
+  const [productName, productImage] = productData.split("|");
 
-function clearCart(){
-  localStorage.removeItem('cart');
-  alert('تم تفريغ السلة');
-  location.reload();
+  const whatsappNumber = "213668086810"; // رقمك
+  const message =
+`🛍️ طلب جديد
+
+👕 المنتج: ${productName}
+📏 المقاس: ${size}
+📍 الولاية: ${state}
+📞 الهاتف: ${phone}
+👤 الاسم: ${fname} ${lname}
+
+🖼️ صورة المنتج:
+${productImage}`;
+
+  const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+  window.location.href = url;
+}
+</script>
 }
 
 /* Parallax حركة الخلفية عند التمرير */
